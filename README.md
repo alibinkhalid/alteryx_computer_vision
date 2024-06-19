@@ -38,12 +38,12 @@ In tests, Resnet50V2 demonstrated the best balance of accuracy and speed. Hereâ€
 | Resnet50V2         | 57 min        | 1 min 28 sec    | 89.88%          |
 
 
-##Output of Model
-[Results](https://github.com/alibinkhalid/alteryx_computer_vision/blob/c47c4aa565c253081c74e222c1286eb030164753/Results.png)
+## Output of Model
+![Results](https://github.com/alibinkhalid/alteryx_computer_vision/blob/c47c4aa565c253081c74e222c1286eb030164753/Results.png)
 
 
 ## Practical Applications
-Image classification has vast applications. However, always consider ethical implications, especially when dealing with personal images.
+Image classification has vast applications. However, always consider [ethical implications](https://www.microsoft.com/en-us/ai/responsible-ai), especially when dealing with personal images.
 
 
 ## Further Reading
