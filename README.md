@@ -18,9 +18,27 @@ In the Image Recognition Tool, specify the source of training and validation ima
 
 ![Tool Configuration](https://github.com/alibinkhalid/alteryx_computer_vision/blob/61a91d1b443ec7770a13288e7fadaf8cb45ff948/tool%20configuration.png)
 
+# epoch
+An epoch is a single pass (forward and backward) of all data in a training set through a neural network. Epochs are related to iterations, but not the same. An iteration is a single pass of all data in a batch of a training set.
+Increasing the number of epochs allows the model to learn from the training set for a longer time. But doing that also increases the computational expense.
+You can increase the number of epochs to help reduce error in the model. But at some point, the amount of error reduction might not be worth the added computational expense. Also, increasing the number of epochs too much can cause problems of overfitting, while not using enough epochs can cause problems of underfitting.
+
 ## Choosing a Model
 Select from pre-trained models like InceptionV3, VGG16, InceptionResNetV2, or Resnet50V2, each with distinct trade-offs in accuracy and performance.
 
+Pre-trained models are models that contain feature-extraction methods with parameters that are already defined. Models with more parameters tend to be more accurate, but slower and computationally expensive. The opposite is true for models with fewer parameters; they tend to be less accurate, but faster and computationally cheap.
+
+Here are simplified explanations of the pre-trained models included in the tool. Keep in mind that the performance of these models drastically depends on your data, so the summaries won't always be true.
+**VGG16** tends to be the most accurate, slowest, and most computationally expensive. Minimum image size: 32 × 32 pixels.
+**InceptionResNetV2** tends to balance accuracy, speed, and computational expense, with some bias toward accuracy. Minimum image size: 75 × 75 pixels.
+**Resnet50V2** tends to balance of accuracy, speed, and computational expense, with some bias toward speed and less computational expense. Minimum image size: 32 × 32 pixels.
+**InceptionV3** tends to be the least accurate (but still quite accurate), fastest, and least computationally expensive. Minimum image size: 75 × 75 pixels.
+
+Each of those models was trained on a dataset that contained over 14 million images with more than 20,000 labels.
+
+Choosing a pre-trained model allows you to skip training an entire neural network using your own images. When you choose to use a pre-trained model, you're effectively assuming that your input parameters match what the pre-trained model expects, so you don't need to rebuild a model that does about the same thing as the pre-trained one (and might even perform worse). Because many of the features from images tend to be the same as the ones the models have used during training, often you can safely assume that a pre-trained model will work with your input.
+
+Use a pre-trained model when you have images with features that match what the pre-trained model expects and want to avoid training your own model.
 
 ## Model Training and Prediction
 Execute the workflow and observe the training progress. Typically, accuracy improves and loss decreases over time. Save the trained model in a .yxdb file for future use.
